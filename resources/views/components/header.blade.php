@@ -36,11 +36,11 @@
 
 <div class="border-gray-200 bg-tertiary py-2 text-primary">
 
-    @if(session('admin_authenticated'))
+    @auth('admin')
         <!-- Logged in view -->
         <div class="flex justify-between mx-auto max-w-7xl w-full px-4 sm:px-6 lg:px-8">
             <p class="font-medium text-primary">
-                Admin
+                Welcome, {{ Auth::guard('admin')->user()->name }}
             </p>
 
             <form action="{{ route('admin.logout') }}" method="POST">
@@ -55,9 +55,6 @@
         <!-- Guest -->
         <p class="text-center font-medium">
             Welcome, Guest!
-{{--            <a href="#" class="inline-block underline hover:text-secondary transition">--}}
-{{--                sit amet consectetur--}}
-{{--            </a>--}}
         </p>
     @endauth
 

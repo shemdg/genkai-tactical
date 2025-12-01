@@ -10,7 +10,7 @@ use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
-// Home, About, Contact
+// Home
 Route::get('/', HomeController::class)->name('home');
 
 // Products
@@ -30,17 +30,19 @@ Route::get('/checkout', [OrderController::class, 'create'])->name('checkout');
 Route::post('/orders', [OrderController::class, 'store'])->name('orders.store');
 Route::get('/orders/{order:order_number}', [OrderController::class, 'show'])->name('orders.show');
 
-// Admin Auth Routes (no auth required)
-Route::get('/admin/login', [AuthController::class, 'showLogin'])->name('admin.login');
-Route::post('/admin/login', [AuthController::class, 'login'])->name('admin.login.post');
-Route::get('/admin/register', [AuthController::class, 'showRegister'])->name('admin.register');
-Route::post('/admin/register', [AuthController::class, 'register'])->name('admin.register.post');
+// Admin Auth Routes (guest only)
+Route::middleware('guest:admin')->group(function () {
+    Route::get('/admin/login', [AuthController::class, 'showLogin'])->name('admin.login');
+    Route::post('/admin/login', [AuthController::class, 'login'])->name('admin.login.post');
+    Route::get('/admin/register', [AuthController::class, 'showRegister'])->name('admin.register');
+    Route::post('/admin/register', [AuthController::class, 'register'])->name('admin.register.post');
+});
 
 // Admin Protected Routes
 Route::middleware('admin')->prefix('admin')->name('admin.')->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 
-    Route::post('/admin/logout', [AuthController::class, 'logout'])->name('admin.logout');
+    Route::post('/logout', [AuthController::class, 'logout'])->name('logout'); // Remove /admin prefix
 
     // Products
     Route::resource('products', AdminProductController::class);
@@ -50,3 +52,4 @@ Route::middleware('admin')->prefix('admin')->name('admin.')->group(function () {
     Route::get('orders/{order}', [AdminOrderController::class, 'show'])->name('orders.show');
     Route::patch('orders/{order}/status', [AdminOrderController::class, 'updateStatus'])->name('orders.updateStatus');
 });
+

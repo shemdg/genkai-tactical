@@ -115,7 +115,11 @@
                         </li>
 
                         <li>
-                            <a href="{{ route('admin.login') }}" class="transition hover:text-tertiary"> Admin </a>
+                            @auth('admin')
+                                <a href="{{ route('admin.dashboard') }}" class="transition hover:text-tertiary"> Admin Dashboard </a>
+                            @else
+                                <a href="{{ route('admin.login') }}" class="transition hover:text-tertiary"> Admin Login </a>
+                            @endauth
                         </li>
 
                     </ul>
