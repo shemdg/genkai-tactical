@@ -68,13 +68,74 @@
                     @endforeach
 
                     <!-- Clear Cart -->
-                    <form action="{{ route('cart.clear') }}" method="POST">
+                    <form action="{{ route('cart.clear') }}" method="POST" id="clearCartForm">
                         @csrf
                         @method('DELETE')
-                        <button type="submit" class="text-red-600 hover:text-red-800 font-semibold" onclick="return confirm('Are you sure you want to clear your cart?')">
+                        <button type="button"
+                                class="text-red-600 hover:text-red-800 font-semibold"
+                                onclick="openClearCartModal()">
                             Clear Cart
                         </button>
                     </form>
+
+                    <!-- Modal (hidden by default), i noticed the bg-black/50 doesnt fully cover the page and it icks me lmao. i added h-screen -->
+                    <div class="fixed inset-0 z-50 grid place-content-center h-screen bg-black/50 p-4 hidden"
+                         id="clearCartModal"
+                         role="dialog"
+                         aria-modal="true"
+                         aria-labelledby="modalTitle">
+                        <div class="w-full max-w-md rounded-lg bg-white p-6 shadow-lg">
+                            <h2 id="modalTitle" class="text-xl font-bold text-gray-900 sm:text-2xl">Clear Cart</h2>
+
+                            <div class="mt-4">
+                                <p class="text-pretty text-gray-700">
+                                    Are you sure you want to clear your cart? This action cannot be undone.
+                                </p>
+                            </div>
+
+                            <footer class="mt-6 flex justify-end gap-2">
+                                <button type="button"
+                                        class="rounded bg-gray-100 px-4 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-200"
+                                        onclick="closeClearCartModal()">
+                                    Cancel
+                                </button>
+
+                                <button type="button"
+                                        class="rounded bg-red-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-red-700"
+                                        onclick="submitClearCartForm()">
+                                    Clear Cart
+                                </button>
+                            </footer>
+                        </div>
+                    </div>
+
+                    <script>
+                        function openClearCartModal() {
+                            document.getElementById('clearCartModal').classList.remove('hidden');
+                        }
+
+                        function closeClearCartModal() {
+                            document.getElementById('clearCartModal').classList.add('hidden');
+                        }
+
+                        function submitClearCartForm() {
+                            document.getElementById('clearCartForm').submit();
+                        }
+
+                        // Close modal when clicking outside
+                        document.getElementById('clearCartModal').addEventListener('click', function(e) {
+                            if (e.target === this) {
+                                closeClearCartModal();
+                            }
+                        });
+
+                        // Close modal with Escape key
+                        document.addEventListener('keydown', function(e) {
+                            if (e.key === 'Escape') {
+                                closeClearCartModal();
+                            }
+                        });
+                    </script>
                 </div>
 
                 <!-- Order Summary -->

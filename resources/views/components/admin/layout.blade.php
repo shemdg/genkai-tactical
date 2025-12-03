@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ $title ?? 'Admin Panel' }} | Genkai Tactical</title>
     <link rel="icon" type="image/png" href="{{ asset('logo.png') }}">
-    @vite('resources/css/app.css')
+    @vite(['resources/js/app.js', 'resources/css/app.css'])
 </head>
 <body class="bg-gray-100">
 <div class="min-h-screen flex">
@@ -111,8 +111,32 @@
 
         <!-- Flash Messages -->
         @if(session('success'))
-            <div class="mx-8 mt-4 bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded">
-                {{ session('success') }}
+{{--            <div class="mx-8 mt-4 bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded">--}}
+{{--                {{ session('success') }}--}}
+{{--            </div>--}}
+
+            <!-- Alert positioned absolutely within hero section -->
+            <div class="absolute top-4 right-0 z-10 flash-message">
+                <div class="max-w-7xl px-4 sm:px-6 lg:px-8">
+                    <div class="flex justify-end">
+                        <div class="w-full lg:w-96">
+                            <div role="alert" class="rounded-md border border-green-500 bg-green-50 p-4 shadow-lg">
+                                <div class="flex items-start gap-4">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="-mt-0.5 size-6 text-green-700">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+
+                                    <div class="flex-1">
+                                        <strong class="block leading-tight font-medium text-green-800">Success</strong>
+                                        <p class="mt-0.5 text-sm text-green-700">
+                                            {{ session('success') }}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         @endif
 
