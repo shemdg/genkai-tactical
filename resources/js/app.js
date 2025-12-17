@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (flashMessage) {
         setTimeout(function() {
-            flashMessage.style.transition = 'opacity 0.5s ease';
+            flashMessage.style.transition = 'opacity 1s ease';
             flashMessage.style.opacity = '0';
 
             // Remove from DOM after fade out
