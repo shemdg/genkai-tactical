@@ -10,6 +10,8 @@ use Illuminate\Support\Facades\Mail;
 use App\Mail\OrderPlaced;
 use App\Mail\PaymentVerified;
 
+use App\Jobs\SendOrderPlacedEmail;
+
 class OrderController extends Controller
 {
     private function getSessionId()
@@ -88,13 +90,8 @@ class OrderController extends Controller
         // Clear Cart
         CartItem::where('session_id', $this->getSessionId())->delete();
 
-                // Send email notification
-        try {
-            Mail::to($order->customer_email)->send(new OrderPlaced($order));
-        } catch (\Exception $e) {
-            // Log error but don't fail the order
-            logger()->error('Failed to send order email: ' . $e->getMessage());
-        }
+        // Dispatch email job (runs in background!)
+        SendOrderPlacedEmail::dispatch($order);
 
         return redirect()->route('orders.show', $order->order_number)
             ->with('success', 'Order placed successfully!');

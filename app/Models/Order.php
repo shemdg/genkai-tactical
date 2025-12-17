@@ -10,7 +10,9 @@ class Order extends Model
     use hasFactory;
 
     protected $casts = [
-      'total' => 'decimal:2'
+        'payment_verified_at' => 'datetime',
+        'created_at' => 'datetime',
+        'updated_at' => 'datetime',
     ];
 
     public function orderItems()

@@ -55,7 +55,9 @@
                                     </tr>
                                     <tr>
                                         <td style="color: #6b7280; font-size: 14px;">Verified At:</td>
-                                        <td style="text-align: right; color: #1f2937; font-weight: bold;">{{ $order->payment_verified_at->format('F d, Y h:i A') }}</td>
+                                        <td style="text-align: right; color: #1f2937; font-weight: bold;">
+                                            {{ $order->payment_verified_at ? \Carbon\Carbon::parse($order->payment_verified_at)->format('F d, Y h:i A') : 'N/A' }}
+                                        </td>
                                     </tr>
                                 </table>
                             </div>

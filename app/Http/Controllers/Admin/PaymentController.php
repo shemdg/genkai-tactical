@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Order;
+use App\Jobs\SendPaymentVerifiedEmail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\PaymentVerified;
@@ -30,12 +31,8 @@ class PaymentController extends Controller
             'payment_verified_at' => now(),
         ]);
 
-        // Send verification email
-        try {
-            Mail::to($order->customer_email)->send(new PaymentVerified($order));
-        } catch (\Exception $e) {
-            logger()->error('Failed to send payment verification email: ' . $e->getMessage());
-        }
+        // Dispatch email job (runs in background!)
+        SendPaymentVerifiedEmail::dispatch($order);
 
         return redirect()->back()->with('success', 'Payment verified successfully!');
     }
