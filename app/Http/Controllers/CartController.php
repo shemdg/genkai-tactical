@@ -32,7 +32,6 @@ class CartController extends Controller
         ]);
     }
 
-
     public function add(Request $request, Product $product)
     {
         $request->validate([

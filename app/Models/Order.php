@@ -18,6 +18,23 @@ class Order extends Model
         return $this->hasMany(OrderItem::class);
     }
 
+    // Helper method to check if payment is verified
+    public function isPaymentVerified()
+    {
+        return $this->payment_status === 'verified';
+    }
+
+    // Helper method to get payment status badge
+    public function getPaymentStatusBadge()
+    {
+        return match($this->payment_status) {
+            'verified' => '<span class="badge bg-success">Verified</span>',
+            'pending' => '<span class="badge bg-warning">Pending</span>',
+            'failed' => '<span class="badge bg-danger">Failed</span>',
+            default => '<span class="badge bg-secondary">Unknown</span>',
+        };
+    }
+
     public static function boot()
     {
         parent::boot();

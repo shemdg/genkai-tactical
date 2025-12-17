@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\ProductController as AdminProductController;
 use App\Http\Controllers\Admin\OrderController as AdminOrderController;
+use App\Http\Controllers\Admin\PaymentController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\OrderController;
@@ -42,7 +43,7 @@ Route::middleware('guest:admin')->group(function () {
 Route::middleware('admin')->prefix('admin')->name('admin.')->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 
-    Route::post('/logout', [AuthController::class, 'logout'])->name('logout'); // Remove /admin prefix
+    Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
     // Products
     Route::resource('products', AdminProductController::class);
@@ -51,5 +52,11 @@ Route::middleware('admin')->prefix('admin')->name('admin.')->group(function () {
     Route::get('orders', [AdminOrderController::class, 'index'])->name('orders.index');
     Route::get('orders/{order}', [AdminOrderController::class, 'show'])->name('orders.show');
     Route::patch('orders/{order}/status', [AdminOrderController::class, 'updateStatus'])->name('orders.updateStatus');
+
+    // Payments - MOVED INSIDE ADMIN MIDDLEWARE GROUP
+    Route::get('payments', [PaymentController::class, 'index'])->name('payments.index');
+    Route::post('payments/{order}/verify', [PaymentController::class, 'verify'])->name('payments.verify');
+    Route::post('payments/{order}/reject', [PaymentController::class, 'reject'])->name('payments.reject');
 });
 
+Route::get('/playground', [\App\Http\Controllers\PlaygroundController::class, 'index']);

@@ -43,6 +43,14 @@
                 </li>
 
                 <li>
+                    <a href="{{ route('admin.payments.index') }}"
+                       class="block rounded-lg px-4 py-2 text-sm font-medium text-gray-500
+           {{ request()->routeIs('admin.payments.*') ? 'bg-secondary text-white' : 'hover:bg-gray-100 hover:text-gray-700' }}">
+                        Payments
+                    </a>
+                </li>
+
+                <li>
                     <a href="{{ route('home') }}"
                        class="block rounded-lg px-4 py-2 text-sm font-medium text-gray-500
            {{ request()->routeIs('home') ? 'bg-secondary text-white' : 'hover:bg-gray-100 hover:text-gray-700' }}">
@@ -111,9 +119,6 @@
 
         <!-- Flash Messages -->
         @if(session('success'))
-{{--            <div class="mx-8 mt-4 bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded">--}}
-{{--                {{ session('success') }}--}}
-{{--            </div>--}}
 
             <!-- Alert positioned absolutely within hero section -->
             <div class="absolute top-4 right-0 z-10 flash-message">
