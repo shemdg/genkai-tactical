@@ -13,14 +13,41 @@
 </head>
 <body class="text-tertiary">
 
-    <!-- Navigation -->
+<!-- Navigation -->
     <header class="bg-brand-secondary">
         <div class="mx-auto max-w-7xl w-full px-4 sm:px-6 lg:px-8">
-            <div class="flex h-16 items-center justify-between">
-                <div class="flex-1 md:flex md:items-center md:gap-12">
-                    <a href="/">
+            <div class="flex h-16 items-center justify-between gap-4">
+                <div class="flex items-center gap-4 flex-1">
+                    <a href="/" class="flex-shrink-0">
                         <img src="{{ asset('logo.svg') }}" alt="logo" class="h-5" />
                     </a>
+
+                    <!-- Search Bar -->
+                    <div class="flex-1 ml-5 max-w-2xl">
+                        <form action="{{ route('products.index') }}" method="GET" class="flex">
+                            <div class="relative flex-1">
+                                <select name="category" class="absolute left-0 top-0 h-full px-4 py-2 bg-brand-primary border-r border-gray-300 rounded-l-md text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-brand-primary">
+                                    <option value="">All categories</option>
+                                    <option value="mens">Tactical</option>
+                                    <option value="womans">Kitchen</option>
+                                    <option value="kids">Pocket</option>
+                                    <option value="elect">Hunting</option>
+                                </select>
+                                <input 
+                                    type="text" 
+                                    name="search" 
+                                    placeholder="I'm looking for..." 
+                                    class="w-full h-full pl-40 pr-4 py-2 border bg-brand-primary border-brand-primary"
+                                    value="{{ request('search') }}"
+                                />
+                            </div>
+                            <button type="submit" class="px-6 bg-green-500 text-white rounded-r-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                                </svg>
+                            </button>
+                        </form>
+                    </div>
                 </div>
 
                 <div class="md:flex md:items-center md:gap-12">
