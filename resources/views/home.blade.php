@@ -36,7 +36,7 @@
             <div class="max-w-prose text-left">
                 <h1 class="text-4xl font-bold text-tertiary sm:text-5xl">
                     Premium
-                    <strong class="text-secondary"> Tactical </strong>
+                    <strong class="text-brand-secondary"> Tactical </strong>
                     Knives
                 </h1>
 
@@ -45,7 +45,7 @@
                 </p>
 
                 <div class="mt-4 flex gap-4 sm:mt-6">
-                    <a class="inline-block rounded border border-secondary bg-secondary px-5 py-3 font-medium text-primary shadow-sm transition-colors hover:bg-secondary-hover" href="{{ route('products.index') }}">
+                    <a class="inline-block rounded border border-brand-secondary bg-brand-secondary px-5 py-3 font-medium text-brand-primary shadow-sm transition-colors hover:bg-brand-secondary-hover" href="{{ route('products.index') }}">
                         Shop Now
                     </a>
 
@@ -59,7 +59,7 @@
 
     <!-- Rest of your content remains the same -->
     <!-- Categories -->
-    <section class="py-16 bg-primary">
+    <section class="py-16 bg-brand-primary">
         <div class="container mx-auto px-4">
             <div class="flex items-center gap-4 mb-12">
                 <div class="h-px flex-1 bg-gray-300"></div>
@@ -71,7 +71,7 @@
     </section>
 
     <!-- Featured Products -->
-    <section id="featured" class="py-16 bg-primary">
+    <section id="featured" class="py-16 bg-brand-primary">
         <div class="container mx-auto px-4">
             <div class="flex items-center gap-4 mb-12">
                 <div class="h-px flex-1 bg-gray-300"></div>

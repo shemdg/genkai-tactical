@@ -8,9 +8,9 @@
     @vite(['resources/css/app.css'])
     <link rel="stylesheet" href="{{ asset('fonts/inter/inter.css') }}" />
 </head>
-<body class="bg-secondary text-tertiary">
+<body class="bg-brand-secondary text-tertiary">
 <div class="min-h-screen flex items-center justify-center py-12 px-4">
-    <div class="bg-primary p-8 rounded-lg shadow-2xl w-full max-w-md">
+    <div class="bg-brand-primary p-8 rounded-lg shadow-2xl w-full max-w-md">
         <div class="text-center mb-8">
             <h1 class="text-3xl font-bold">Admin Login</h1>
             <p class="mt-2">Genkai Tactical</p>
@@ -42,7 +42,7 @@
                        value="{{ old('email') }}"
                        required
                        autofocus
-                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent @error('email') border-red-500 @enderror">
+                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-secondary focus:border-transparent @error('email') border-red-500 @enderror">
                 @error('email')
                 <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
                 @enderror
@@ -53,7 +53,7 @@
                 <input type="password"
                        name="password"
                        required
-                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent @error('password') border-red-500 @enderror">
+                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-secondary focus:border-transparent @error('password') border-red-500 @enderror">
                 @error('password')
                 <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
                 @enderror
@@ -66,19 +66,19 @@
                 </label>
             </div>
 
-            <button type="submit" class="w-full bg-secondary hover:bg-secondary-hover text-white font-bold py-3 rounded-lg transition">
+            <button type="submit" class="w-full bg-brand-secondary hover:bg-brand-secondary-hover text-white font-bold py-3 rounded-lg transition">
                 Login
             </button>
         </form>
 
         <div class="mt-6 text-center">
-            <a href="{{ route('home') }}" class="text-gray-600 hover:text-secondary">
+            <a href="{{ route('home') }}" class="text-gray-600 hover:text-brand-secondary">
                 ← Back to Website
             </a>
         </div>
 
         <div class="mt-4 text-center">
-            <a href="{{ route('admin.register') }}" class="text-gray-600 hover:text-secondary">
+            <a href="{{ route('admin.register') }}" class="text-gray-600 hover:text-brand-secondary">
                 Don't have an account? Register
             </a>
         </div>

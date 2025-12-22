@@ -4,11 +4,11 @@
     <div class="container mx-auto px-4 py-8">
         <!-- Breadcrumb -->
         <nav class="mb-8 text-sm text-gray-600">
-            <a href="{{ route('home') }}" class="hover:text-secondary">Home</a>
+            <a href="{{ route('home') }}" class="hover:text-brand-secondary">Home</a>
             <span class="mx-2">/</span>
-            <a href="{{ route('products.index') }}" class="hover:text-secondary">Products</a>
+            <a href="{{ route('products.index') }}" class="hover:text-brand-secondary">Products</a>
             <span class="mx-2">/</span>
-            <a href="{{ route('categories.show', $product->category->slug) }}" class="hover:text-secondary">{{ $product->category->name }}</a>
+            <a href="{{ route('categories.show', $product->category->slug) }}" class="hover:text-brand-secondary">{{ $product->category->name }}</a>
             <span class="mx-2">/</span>
             <span class="text-gray-900">{{ $product->name }}</span>
         </nav>
@@ -23,12 +23,12 @@
 
             <!-- Product Info -->
             <div>
-                <div class="text-sm text-secondary font-semibold mb-2">{{ $product->category->name }}</div>
+                <div class="text-sm text-brand-secondary font-semibold mb-2">{{ $product->category->name }}</div>
                 <h1 class="text-4xl font-bold mb-4">{{ $product->name }}</h1>
 
                 <!-- Price -->
                 <div class="mb-6">
-                    <span class="text-4xl font-bold text-secondary">₱{{ number_format($product->price, 2) }}</span>
+                    <span class="text-4xl font-bold text-brand-secondary">₱{{ number_format($product->price, 2) }}</span>
                 </div>
 
                 <!-- Stock Status -->
@@ -88,9 +88,9 @@
                                 </div>
 
                                 <div class="p-4">
-                                    <h3 class="font-bold text-lg mb-2 hover:text-secondary">{{ $related->name }}</h3>
+                                    <h3 class="font-bold text-lg mb-2 hover:text-brand-secondary">{{ $related->name }}</h3>
                                     <div class="flex items-center justify-between">
-                                        <span class="text-xl font-bold text-secondary">₱{{ number_format($related->price, 2) }}</span>
+                                        <span class="text-xl font-bold text-brand-secondary">₱{{ number_format($related->price, 2) }}</span>
                                     </div>
                                 </div>
                             </a>

@@ -10,7 +10,7 @@
                 <div class="text-6xl mb-4">🛒</div>
                 <h2 class="text-2xl font-bold mb-4">Your cart is empty</h2>
                 <p class="text-gray-600 mb-8">Add some awesome knives to get started!</p>
-                <a href="{{ route('products.index') }}" class="inline-block bg-secondary hover:bg-secondary-hover text-white font-bold py-3 px-8 rounded-lg transition">
+                <a href="{{ route('products.index') }}" class="inline-block bg-brand-secondary hover:bg-brand-secondary-hover text-white font-bold py-3 px-8 rounded-lg transition">
                     Browse Products
                 </a>
             </div>
@@ -27,11 +27,11 @@
 
                             <!-- Product Info -->
                             <div class="flex-grow">
-                                <a href="{{ route('products.show', $item->product->slug) }}" class="font-bold text-lg hover:text-secondary">
+                                <a href="{{ route('products.show', $item->product->slug) }}" class="font-bold text-lg hover:text-brand-secondary">
                                     {{ $item->product->name }}
                                 </a>
                                 <p class="text-sm text-gray-600">{{ $item->product->category->name }}</p>
-                                <p class="text-lg font-bold text-secondary mt-2">₱{{ number_format($item->product->price, 2) }}</p>
+                                <p class="text-lg font-bold text-brand-secondary mt-2">₱{{ number_format($item->product->price, 2) }}</p>
                             </div>
 
                             <!-- Quantity -->
@@ -57,7 +57,7 @@
                                 <form action="{{ route('cart.remove', $item) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="text-secondary hover:text-red-800 p-2">
+                                    <button type="submit" class="text-brand-secondary hover:text-red-800 p-2">
                                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
                                         </svg>
@@ -154,7 +154,7 @@
                             </div>
                             <div class="border-t pt-3 flex justify-between font-bold text-xl">
                                 <span>Total</span>
-                                <span class="text-secondary">₱{{ number_format($total, 2) }}</span>
+                                <span class="text-brand-secondary">₱{{ number_format($total, 2) }}</span>
                             </div>
                         </div>
 
@@ -162,7 +162,7 @@
                             Proceed to Checkout
                         </a>
 
-                        <a href="{{ route('products.index') }}" class="block w-full text-center mt-4 text-gray-600 hover:text-secondary font-semibold">
+                        <a href="{{ route('products.index') }}" class="block w-full text-center mt-4 text-gray-600 hover:text-brand-secondary font-semibold">
                             Continue Shopping
                         </a>
                     </div>

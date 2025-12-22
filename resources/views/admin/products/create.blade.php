@@ -75,7 +75,7 @@
                 </div>
 
                 <div class="flex gap-4 mt-8">
-                    <button type="submit" class="bg-secondary hover:bg-secondary-hover text-white font-bold py-3 px-8 rounded-lg">
+                    <button type="submit" class="bg-brand-secondary hover:bg-brand-secondary-hover text-white font-bold py-3 px-8 rounded-lg">
                         Create Product
                     </button>
                     <a href="{{ route('admin.products.index') }}" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-3 px-8 rounded-lg">

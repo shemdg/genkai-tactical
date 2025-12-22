@@ -21,7 +21,7 @@
                                        name="customer_name"
                                        value="{{ old('customer_name') }}"
                                        required
-                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent @error('customer_name') border-red-500 @enderror">
+                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-secondary focus:border-transparent @error('customer_name') border-red-500 @enderror">
                                 @error('customer_name')
                                 <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
                                 @enderror
@@ -34,7 +34,7 @@
                                        name="customer_email"
                                        value="{{ old('customer_email') }}"
                                        required
-                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent @error('customer_email') border-red-500 @enderror">
+                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-secondary focus:border-transparent @error('customer_email') border-red-500 @enderror">
                                 @error('customer_email')
                                 <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
                                 @enderror
@@ -48,7 +48,7 @@
                                        value="{{ old('customer_phone') }}"
                                        required
                                        placeholder="+63 XXX XXX XXXX"
-                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent @error('customer_phone') border-red-500 @enderror">
+                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-secondary focus:border-transparent @error('customer_phone') border-red-500 @enderror">
                                 @error('customer_phone')
                                 <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
                                 @enderror
@@ -61,7 +61,7 @@
                                           rows="4"
                                           required
                                           placeholder="House/Unit No., Street, Barangay, City, Province, ZIP Code"
-                                          class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent @error('customer_address') border-red-500 @enderror">{{ old('customer_address') }}</textarea>
+                                          class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-secondary focus:border-transparent @error('customer_address') border-red-500 @enderror">{{ old('customer_address') }}</textarea>
                                 @error('customer_address')
                                 <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
                                 @enderror
@@ -73,7 +73,7 @@
                                 <textarea name="notes"
                                           rows="3"
                                           placeholder="Any special instructions or requests..."
-                                          class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent">{{ old('notes') }}</textarea>
+                                          class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-secondary focus:border-transparent">{{ old('notes') }}</textarea>
                             </div>
                         </div>
                     </div>
@@ -177,7 +177,7 @@
                                     <div class="flex-grow">
                                         <p class="font-semibold text-sm">{{ $item->product->name }}</p>
                                         <p class="text-sm text-gray-600">Qty: {{ $item->quantity }}</p>
-                                        <p class="text-sm font-bold text-secondary">₱{{ number_format($item->quantity * $item->product->price, 2) }}</p>
+                                        <p class="text-sm font-bold text-brand-secondary">₱{{ number_format($item->quantity * $item->product->price, 2) }}</p>
                                     </div>
                                 </div>
                             @endforeach
@@ -195,7 +195,7 @@
                             </div>
                             <div class="border-t pt-3 flex justify-between font-bold text-xl">
                                 <span>Total</span>
-                                <span class="text-secondary">₱{{ number_format($total, 2) }}</span>
+                                <span class="text-brand-secondary">₱{{ number_format($total, 2) }}</span>
                             </div>
                         </div>
 
@@ -204,7 +204,7 @@
                             Place Order
                         </button>
 
-                        <a href="{{ route('cart.index') }}" class="block text-center mt-4 text-gray-600 hover:text-secondary font-semibold">
+                        <a href="{{ route('cart.index') }}" class="block text-center mt-4 text-gray-600 hover:text-brand-secondary font-semibold">
                             ← Back to Cart
                         </a>
                     </div>

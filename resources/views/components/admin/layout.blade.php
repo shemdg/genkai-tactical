@@ -21,7 +21,7 @@
                 <li>
                     <a href="{{ route('admin.dashboard') }}"
                        class="block rounded-lg px-4 py-2 text-sm font-medium text-gray-500
-           {{ request()->routeIs('admin.dashboard') ? 'bg-secondary text-white hover:bg-gray-0' : 'hover:bg-gray-100 hover:text-gray-700' }}">
+           {{ request()->routeIs('admin.dashboard') ? 'bg-brand-secondary text-white hover:bg-gray-0' : 'hover:bg-gray-100 hover:text-gray-700' }}">
                         Dashboard
                     </a>
                 </li>
@@ -29,7 +29,7 @@
                 <li>
                     <a href="{{ route('admin.products.index') }}"
                        class="block rounded-lg px-4 py-2 text-sm font-medium text-gray-500
-           {{ request()->routeIs('admin.products.*') ? 'bg-secondary text-white' : 'hover:bg-gray-100 hover:text-gray-700' }}">
+           {{ request()->routeIs('admin.products.*') ? 'bg-brand-secondary text-white' : 'hover:bg-gray-100 hover:text-gray-700' }}">
                         Products
                     </a>
                 </li>
@@ -37,7 +37,7 @@
                 <li>
                     <a href="{{ route('admin.orders.index') }}"
                        class="block rounded-lg px-4 py-2 text-sm font-medium text-gray-500
-           {{ request()->routeIs('admin.orders.*') ? 'bg-secondary text-white' : 'hover:bg-gray-100 hover:text-gray-700' }}">
+           {{ request()->routeIs('admin.orders.*') ? 'bg-brand-secondary text-white' : 'hover:bg-gray-100 hover:text-gray-700' }}">
                         Orders
                     </a>
                 </li>
@@ -45,7 +45,7 @@
                 <li>
                     <a href="{{ route('admin.payments.index') }}"
                        class="block rounded-lg px-4 py-2 text-sm font-medium text-gray-500
-           {{ request()->routeIs('admin.payments.*') ? 'bg-secondary text-white' : 'hover:bg-gray-100 hover:text-gray-700' }}">
+           {{ request()->routeIs('admin.payments.*') ? 'bg-brand-secondary text-white' : 'hover:bg-gray-100 hover:text-gray-700' }}">
                         Payments
                     </a>
                 </li>
@@ -53,7 +53,7 @@
                 <li>
                     <a href="{{ route('home') }}"
                        class="block rounded-lg px-4 py-2 text-sm font-medium text-gray-500
-           {{ request()->routeIs('home') ? 'bg-secondary text-white' : 'hover:bg-gray-100 hover:text-gray-700' }}">
+           {{ request()->routeIs('home') ? 'bg-brand-secondary text-white' : 'hover:bg-gray-100 hover:text-gray-700' }}">
                         View Site
                     </a>
                 </li>
@@ -62,7 +62,7 @@
                     <details class="group [&_summary::-webkit-details-marker]:hidden">
                         <summary
                             class="flex cursor-pointer items-center justify-between rounded-lg px-4 py-2 text-gray-500 hover:bg-gray-100
-                {{ request()->routeIs('admin.account.*') ? 'bg-secondary text-white' : 'hover:text-gray-700' }}">
+                {{ request()->routeIs('admin.account.*') ? 'bg-brand-secondary text-white' : 'hover:text-gray-700' }}">
                             <span class="text-sm font-medium"> Account </span>
 
                             <span class="shrink-0 transition duration-300 group-open:-rotate-180">

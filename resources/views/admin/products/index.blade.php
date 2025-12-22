@@ -3,7 +3,7 @@
 
     <div class="flex justify-between items-center mb-6">
         <h2 class="text-2xl font-bold">All Products</h2>
-        <a href="{{ route('admin.products.create') }}" class="bg-secondary transition duration-300 hover:bg-secondary-hover text-white font-bold py-2 px-6 rounded-lg">
+        <a href="{{ route('admin.products.create') }}" class="bg-brand-secondary transition duration-300 hover:bg-brand-secondary-hover text-white font-bold py-2 px-6 rounded-lg">
             + Add New Product
         </a>
     </div>

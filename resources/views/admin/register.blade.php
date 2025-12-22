@@ -8,9 +8,9 @@
     @vite(['resources/css/app.css'])
     <link rel="stylesheet" href="{{ asset('fonts/inter/inter.css') }}" />
 </head>
-<body class="bg-secondary text-tertiary">
+<body class="bg-brand-secondary text-tertiary">
 <div class="min-h-screen flex items-center justify-center py-12 px-4">
-    <div class="bg-primary p-8 rounded-lg shadow-2xl w-full max-w-md">
+    <div class="bg-brand-primary p-8 rounded-lg shadow-2xl w-full max-w-md">
         <div class="text-center mb-8">
             <h1 class="text-3xl font-bold">Admin Registration</h1>
             <p class="mt-2">Genkai Tactical</p>
@@ -41,7 +41,7 @@
                        name="name"
                        value="{{ old('name') }}"
                        required
-                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent @error('name') border-red-500 @enderror">
+                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-secondary focus:border-transparent @error('name') border-red-500 @enderror">
                 @error('name')
                 <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
                 @enderror
@@ -53,7 +53,7 @@
                        name="email"
                        value="{{ old('email') }}"
                        required
-                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent @error('email') border-red-500 @enderror">
+                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-secondary focus:border-transparent @error('email') border-red-500 @enderror">
                 @error('email')
                 <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
                 @enderror
@@ -64,7 +64,7 @@
                 <input type="password"
                        name="password"
                        required
-                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent @error('password') border-red-500 @enderror">
+                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-secondary focus:border-transparent @error('password') border-red-500 @enderror">
                 @error('password')
                 <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
                 @enderror
@@ -75,22 +75,22 @@
                 <input type="password"
                        name="password_confirmation"
                        required
-                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent">
+                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-secondary focus:border-transparent">
             </div>
 
-            <button type="submit" class="w-full bg-secondary hover:bg-secondary-hover text-white font-bold py-3 rounded-lg transition">
+            <button type="submit" class="w-full bg-brand-secondary hover:bg-brand-secondary-hover text-white font-bold py-3 rounded-lg transition">
                 Register
             </button>
         </form>
 
         <div class="mt-6 text-center">
-            <a href="{{ route('admin.login') }}" class="text-gray-600 hover:text-secondary">
+            <a href="{{ route('admin.login') }}" class="text-gray-600 hover:text-brand-secondary">
                 Already have an account? Login
             </a>
         </div>
 
         <div class="mt-4 text-center">
-            <a href="{{ route('home') }}" class="text-gray-600 hover:text-secondary text-sm">
+            <a href="{{ route('home') }}" class="text-gray-600 hover:text-brand-secondary text-sm">
                 ← Back to Website
             </a>
         </div>

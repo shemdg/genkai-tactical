@@ -33,7 +33,7 @@ class Order extends Model
             'verified' => '<span class="badge bg-success">Verified</span>',
             'pending' => '<span class="badge bg-warning">Pending</span>',
             'failed' => '<span class="badge bg-danger">Failed</span>',
-            default => '<span class="badge bg-secondary">Unknown</span>',
+            default => '<span class="badge bg-brand-secondary">Unknown</span>',
         };
     }
 

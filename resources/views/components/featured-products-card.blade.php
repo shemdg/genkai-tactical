@@ -13,7 +13,7 @@
                         ₱{{ number_format($product->price, 2) }}
                     </p>
 
-                    <span class="rounded-full border border-secondary px-2.5 py-0.5 text-sm whitespace-nowrap text-secondary">
+                    <span class="rounded-full border border-brand-secondary px-2.5 py-0.5 text-sm whitespace-nowrap text-brand-secondary">
                                   Stock: {{ $product->stock }}
                                 </span>
 
@@ -27,12 +27,12 @@
 
                 <div class="mt-4 flex gap-4 text-center items-center">
                     <a href="{{ route('categories.show', $product->category->slug) }}"
-                       class="block w-full rounded-sm bg-primary px-4 py-3 text-sm font-medium text-tertiary transition">
+                       class="block w-full rounded-sm bg-brand-primary px-4 py-3 text-sm font-medium text-tertiary transition">
                         {{ $product->category->name }}
                     </a>
 
                     <a href="{{ route('products.show', $product->slug) }}"
-                       class="block w-full rounded-sm bg-secondary px-4 py-3 text-sm font-medium text-white transition hover:scale-105">
+                       class="block w-full rounded-sm bg-brand-secondary px-4 py-3 text-sm font-medium text-white transition hover:scale-105">
                         View Details
                     </a>
                 </div>

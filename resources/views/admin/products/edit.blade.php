@@ -3,7 +3,7 @@
 
     <div class="max-w-3xl">
         <div class="mb-6">
-            <a href="{{ route('admin.products.index') }}" class="text-gray-600 hover:text-secondary">
+            <a href="{{ route('admin.products.index') }}" class="text-gray-600 hover:text-brand-secondary">
                 ← Back to Products
             </a>
         </div>
@@ -19,7 +19,7 @@
                     <!-- Category -->
                     <div>
                         <label class="block font-semibold mb-2">Category *</label>
-                        <select name="category_id" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary @error('category_id') border-red-500 @enderror">
+                        <select name="category_id" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-secondary @error('category_id') border-red-500 @enderror">
                             <option value="">Select Category</option>
                             @foreach($categories as $category)
                                 <option value="{{ $category->id }}" {{ old('category_id', $product->category_id) == $category->id ? 'selected' : '' }}>
@@ -35,7 +35,7 @@
                     <!-- Name -->
                     <div>
                         <label class="block font-semibold mb-2">Product Name *</label>
-                        <input type="text" name="name" value="{{ old('name', $product->name) }}" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary @error('name') border-red-500 @enderror">
+                        <input type="text" name="name" value="{{ old('name', $product->name) }}" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-secondary @error('name') border-red-500 @enderror">
                         @error('name')
                         <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
                         @enderror
@@ -44,7 +44,7 @@
                     <!-- Description -->
                     <div>
                         <label class="block font-semibold mb-2">Description *</label>
-                        <textarea name="description" rows="5" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary @error('description') border-red-500 @enderror">{{ old('description', $product->description) }}</textarea>
+                        <textarea name="description" rows="5" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-secondary @error('description') border-red-500 @enderror">{{ old('description', $product->description) }}</textarea>
                         @error('description')
                         <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
                         @enderror
@@ -53,7 +53,7 @@
                     <!-- Price -->
                     <div>
                         <label class="block font-semibold mb-2">Price (₱) *</label>
-                        <input type="number" name="price" value="{{ old('price', $product->price) }}" step="0.01" min="0" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary @error('price') border-red-500 @enderror">
+                        <input type="number" name="price" value="{{ old('price', $product->price) }}" step="0.01" min="0" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-secondary @error('price') border-red-500 @enderror">
                         @error('price')
                         <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
                         @enderror
@@ -62,7 +62,7 @@
                     <!-- Stock -->
                     <div>
                         <label class="block font-semibold mb-2">Stock Quantity *</label>
-                        <input type="number" name="stock" value="{{ old('stock', $product->stock) }}" min="0" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary @error('stock') border-red-500 @enderror">
+                        <input type="number" name="stock" value="{{ old('stock', $product->stock) }}" min="0" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-secondary @error('stock') border-red-500 @enderror">
                         @error('stock')
                         <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
                         @enderror
@@ -70,13 +70,13 @@
 
                     <!-- Featured -->
                     <div class="flex items-center">
-                        <input type="checkbox" name="is_featured" id="is_featured" value="1" {{ old('is_featured', $product->is_featured) ? 'checked' : '' }} class="w-4 h-4 text-red-600 border-gray-300 rounded focus:ring-secondary">
+                        <input type="checkbox" name="is_featured" id="is_featured" value="1" {{ old('is_featured', $product->is_featured) ? 'checked' : '' }} class="w-4 h-4 text-red-600 border-gray-300 rounded focus:ring-brand-secondary">
                         <label for="is_featured" class="ml-2 font-semibold">Mark as Featured Product</label>
                     </div>
                 </div>
 
                 <div class="flex gap-4 mt-8">
-                    <button type="submit" class="bg-secondary hover:bg-secondary-hover text-white font-bold py-3 px-8 rounded-lg">
+                    <button type="submit" class="bg-brand-secondary hover:bg-brand-secondary-hover text-white font-bold py-3 px-8 rounded-lg">
                         Update Product
                     </button>
                     <a href="{{ route('admin.products.index') }}" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-3 px-8 rounded-lg">

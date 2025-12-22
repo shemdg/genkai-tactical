@@ -21,14 +21,14 @@
                     <ul class="space-y-2">
                         <li>
                             <a href="{{ route('products.index') }}"
-                               class="block py-2 px-3 rounded {{ !isset($currentCategory) ? 'bg-secondary text-white' : 'hover:bg-gray-100' }}">
+                               class="block py-2 px-3 rounded {{ !isset($currentCategory) ? 'bg-brand-secondary text-white' : 'hover:bg-gray-100' }}">
                                 All Products
                             </a>
                         </li>
                         @foreach($categories as $category)
                             <li>
                                 <a href="{{ route('categories.show', $category->slug) }}"
-                                   class="block py-2 px-3 rounded {{ isset($currentCategory) && $currentCategory->id === $category->id ? 'bg-secondary text-white' : 'hover:bg-gray-100' }}">
+                                   class="block py-2 px-3 rounded {{ isset($currentCategory) && $currentCategory->id === $category->id ? 'bg-brand-secondary text-white' : 'hover:bg-gray-100' }}">
                                     {{ $category->name }}
                                     <span class="text-sm text-gray-500">({{ $category->products_count }})</span>
                                 </a>

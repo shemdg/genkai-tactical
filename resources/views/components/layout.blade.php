@@ -14,7 +14,7 @@
 <body class="text-tertiary">
 
     <!-- Navigation -->
-    <header class="bg-secondary">
+    <header class="bg-brand-secondary">
         <div class="mx-auto max-w-7xl w-full px-4 sm:px-6 lg:px-8">
             <div class="flex h-16 items-center justify-between">
                 <div class="flex-1 md:flex md:items-center md:gap-12">
@@ -27,15 +27,15 @@
                     <nav aria-label="Global" class="hidden md:block">
                         <ul class="flex items-center gap-6 text-sm">
                             <li>
-                                <a class="text-primary transition hover:text-tertiary" href="{{ route('home') }}"> Home </a>
+                                <a class="text-brand-primary transition hover:text-tertiary" href="{{ route('home') }}"> Home </a>
                             </li>
 
                             <li>
-                                <a class="text-primary transition hover:text-tertiary" href="{{ route('products.index') }}"> Products </a>
+                                <a class="text-brand-primary transition hover:text-tertiary" href="{{ route('products.index') }}"> Products </a>
                             </li>
 
                             <li>
-                                <a class="text-primary transition hover:text-tertiary flex items-center space-x-1" href="{{ route('cart.index') }}">
+                                <a class="text-brand-primary transition hover:text-tertiary flex items-center space-x-1" href="{{ route('cart.index') }}">
                                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
                                     </svg>
@@ -57,12 +57,12 @@
     @endif
 
     <!-- Main Content -->
-    <main class="bg-primary">
+    <main class="bg-brand-primary">
         {{ $slot }}
     </main>
 
     {{--Footer--}}
-    <footer class="bg-secondary text-primary">
+    <footer class="bg-brand-secondary text-brand-primary">
         <div class="mx-auto max-w-7xl space-y-8 px-4 py-16 sm:px-6 lg:space-y-16 lg:px-8">
             <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
                 <div>
@@ -211,7 +211,7 @@
                 </div>
             </div>
 
-            <p class="text-xs text-primary">
+            <p class="text-xs text-brand-primary">
                 © {{ date('Y') }}. Genkai Tactical. All rights reserved.
             </p>
         </div>

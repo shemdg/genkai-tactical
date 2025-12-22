@@ -125,7 +125,7 @@
 
             <!-- Actions -->
             <div class="text-center">
-                <a href="{{ route('home') }}" class="inline-block bg-secondary hover:bg-secondary-hover text-white font-bold py-3 px-8 rounded-lg transition">
+                <a href="{{ route('home') }}" class="inline-block bg-brand-secondary hover:bg-brand-secondary-hover text-white font-bold py-3 px-8 rounded-lg transition">
                     Continue Shopping
                 </a>
             </div>
