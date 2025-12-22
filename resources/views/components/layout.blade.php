@@ -12,8 +12,46 @@
     <link rel="stylesheet" href="{{ asset('fonts/inter/inter.css') }}" />
 </head>
 <body class="text-tertiary">
+    <!-- Top Bar -->
+    <div class="bg-brand-primary border-b border-gray-200">
+        <div class="mx-auto max-w-7xl w-full px-4 sm:px-6 lg:px-8">
+            <div class="flex h-10 items-center justify-between text-sm">
+                <!-- Left side links -->
+                <nav class="flex items-center gap-6">
+                    <a href="#" class="text-gray-600 hover:text-brand-secondary transition">
+                        About Us
+                    </a>
+                    <a href="#" class="text-gray-600 hover:text-brand-secondary transition">
+                        Order Tracking
+                    </a>
+                    <a href="#" class="text-gray-600 hover:text-brand-secondary transition">
+                        Contact Us
+                    </a>
+                    <a href="#" class="text-gray-600 hover:text-brand-secondary transition">
+                        FAQs
+                    </a>
+                </nav>
 
-<!-- Navigation -->
+                <!-- Right side - Language & Currency -->
+                <div class="flex items-center gap-4">
+                    <div class="flex items-center gap-2">
+                        <span class="text-gray-600">English</span>
+                        <svg class="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span class="text-gray-600">USD</span>
+                        <svg class="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
     <header class="bg-brand-secondary">
         <div class="mx-auto max-w-7xl w-full px-4 sm:px-6 lg:px-8">
             <div class="flex h-16 items-center justify-between gap-4">
@@ -76,6 +114,46 @@
             </div>
         </div>
     </header>
+
+    <!-- Bottom Bar -->
+    <div class="bg-brand-primary border-gray-200 pt-2">
+        <div class="mx-auto max-w-7xl w-full px-4 sm:px-6 lg:px-8">
+            <div class="flex h-10 items-center justify-between text-md font-semibold">
+                <!-- Left side links -->
+                <nav class="flex items-center gap-6">
+                    <a href="#" class="text-gray-600 hover:text-brand-secondary transition">
+                        Foo
+                    </a>
+                </nav>
+
+                <!-- Right side links -->
+                <nav class="flex items-center gap-6">
+                    <a href="#" class="text-gray-600 hover:text-brand-secondary transition">
+                        Foo
+                    </a>
+                    <a href="#" class="text-gray-600 hover:text-brand-secondary transition">
+                        Bar
+                    </a>
+                    <a href="#" class="text-gray-600 hover:text-brand-secondary transition">
+                        Foo
+                    </a>
+                    <a href="#" class="text-gray-600 hover:text-brand-secondary transition">
+                        Bar
+                    </a>
+                    <a href="#" class="text-gray-600 hover:text-brand-secondary transition">
+                        Foo
+                    </a>
+                    <a href="#" class="text-gray-600 hover:text-brand-secondary transition">
+                        Bar
+                    </a>
+                    <a href="#" class="text-gray-600 hover:text-brand-secondary transition">
+                        Foo
+                    </a>
+
+                </nav>
+            </div>
+        </div>
+    </div>
 
     @if(session('error'))
         <div class="bg-red-500 text-white px-4 py-3 text-center">
