@@ -52,7 +52,7 @@
                 </p>
 
                 <div class="mt-4 flex gap-4 sm:mt-6">
-                    <a class="inline-block rounded border border-brand-secondary bg-brand-secondary px-5 py-3 font-medium text-brand-primary shadow-sm transition-colors hover:bg-brand-secondary-hover" href="{{ route('products.index') }}">
+                    <a class="inline-block rounded border border-green-500 bg-green-500 px-5 py-3 font-medium text-brand-primary shadow-sm transition-colors hover:bg-green-400" href="{{ route('products.index') }}">
                         Shop Now
                     </a>
 
