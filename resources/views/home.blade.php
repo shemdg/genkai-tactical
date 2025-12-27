@@ -32,7 +32,14 @@
         @endif
 
         <!-- Hero content remains unchanged -->
-        <div class="mx-auto w-screen max-w-7xl px-4 py-20 sm:px-6 sm:py-24 lg:px-8 lg:py-32">
+        <div class="mx-auto w-screen max-w-7xl px-4 py-20 sm:px-6 sm:py-24 lg:px-8 lg:py-32 flex items-center text-center justify-between">
+            <div>
+                <img
+                    src="https://plus.unsplash.com/premium_photo-1679826780090-4c79fc382d9e?q=80&w=627&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    class="w-auto max-h-200 border-brand-secondary rounded-lg shadow-lg object-cover"
+                    alt="Premium Tactical Knife"
+                />
+            </div>
             <div class="max-w-prose text-left">
                 <h1 class="text-4xl font-bold text-tertiary sm:text-5xl">
                     Premium
