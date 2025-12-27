@@ -71,10 +71,10 @@
                                     <option value="kids">Pocket</option>
                                     <option value="elect">Hunting</option>
                                 </select>
-                                <input 
-                                    type="text" 
-                                    name="search" 
-                                    placeholder="I'm looking for..." 
+                                <input
+                                    type="text"
+                                    name="search"
+                                    placeholder="I'm looking for..."
                                     class="w-full h-full pl-40 pr-4 py-2 border bg-brand-primary border-brand-primary"
                                     value="{{ request('search') }}"
                                 />
@@ -116,38 +116,44 @@
     </header>
 
     <!-- Bottom Bar -->
-    <div class="bg-brand-primary border-gray-200 pt-2">
+    <div class="bg-brand-primary border-gray-200 pt-4">
         <div class="mx-auto max-w-7xl w-full px-4 sm:px-6 lg:px-8">
             <div class="flex h-10 items-center justify-between text-md font-semibold">
                 <!-- Left side links -->
                 <nav class="flex items-center gap-6">
-                    <a href="#" class="text-gray-600 hover:text-brand-secondary transition">
-                        Foo
+                    <a href="#"
+                       class="inline-flex items-center justify-between rounded-sm border border-green-500 bg-green-500 px-5 py-2 text-sm font-medium text-white hover:bg-transparent hover:text-indigo-600 transition-colors w-48">
+
+                        <!-- Left: Burger Icon -->
+                        <svg class="w-5 h-5 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                  d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+
+                        <!-- Center: Label -->
+                        <span class="flex-1 text-center">All categories</span>
+
+                        <!-- Right: Dropdown Icon -->
+                        <svg class="w-5 h-5 ml-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                  d="M19 9l-7 7-7-7" />
+                        </svg>
                     </a>
                 </nav>
 
                 <!-- Right side links -->
                 <nav class="flex items-center gap-6">
                     <a href="#" class="text-gray-600 hover:text-brand-secondary transition">
-                        Foo
+                        Kitchen
                     </a>
                     <a href="#" class="text-gray-600 hover:text-brand-secondary transition">
-                        Bar
+                        Tactical
                     </a>
                     <a href="#" class="text-gray-600 hover:text-brand-secondary transition">
-                        Foo
+                        Pocket
                     </a>
                     <a href="#" class="text-gray-600 hover:text-brand-secondary transition">
-                        Bar
-                    </a>
-                    <a href="#" class="text-gray-600 hover:text-brand-secondary transition">
-                        Foo
-                    </a>
-                    <a href="#" class="text-gray-600 hover:text-brand-secondary transition">
-                        Bar
-                    </a>
-                    <a href="#" class="text-gray-600 hover:text-brand-secondary transition">
-                        Foo
+                        Hunting
                     </a>
 
                 </nav>
