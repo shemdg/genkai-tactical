@@ -12,154 +12,207 @@
     <link rel="stylesheet" href="{{ asset('fonts/inter/inter.css') }}" />
 </head>
 <body class="text-tertiary">
-    <!-- Top Bar -->
-    <div class="bg-brand-primary border-b border-gray-200">
-        <div class="mx-auto max-w-7xl w-full px-4 sm:px-6 lg:px-8">
-            <div class="flex h-10 items-center justify-between text-sm">
-                <!-- Left side links -->
-                <nav class="flex items-center gap-6">
-                    <a href="#" class="text-gray-600 hover:text-brand-secondary transition">
-                        About Us
-                    </a>
-                    <a href="#" class="text-gray-600 hover:text-brand-secondary transition">
-                        Order Tracking
-                    </a>
-                    <a href="#" class="text-gray-600 hover:text-brand-secondary transition">
-                        Contact Us
-                    </a>
-                    <a href="#" class="text-gray-600 hover:text-brand-secondary transition">
-                        FAQs
-                    </a>
-                </nav>
+<!-- Top Bar - Hidden on mobile -->
+<div class="bg-brand-primary border-b border-gray-200 hidden md:block">
+    <div class="mx-auto max-w-7xl w-full px-4 sm:px-6 lg:px-8">
+        <div class="flex h-10 items-center justify-between text-sm">
+            <!-- Left side links -->
+            <nav class="flex items-center gap-4 lg:gap-6">
+                <a href="#" class="text-gray-600 hover:text-brand-secondary transition">
+                    About Us
+                </a>
+                <a href="#" class="text-gray-600 hover:text-brand-secondary transition">
+                    Order Tracking
+                </a>
+                <a href="#" class="text-gray-600 hover:text-brand-secondary transition hidden lg:block">
+                    Contact Us
+                </a>
+                <a href="#" class="text-gray-600 hover:text-brand-secondary transition hidden lg:block">
+                    FAQs
+                </a>
+            </nav>
 
-                <!-- Right side - Language & Currency -->
-                <div class="flex items-center gap-4">
-                    <div class="flex items-center gap-2">
-                        <span class="text-gray-600">English</span>
-                        <svg class="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                        </svg>
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <span class="text-gray-600">USD</span>
-                        <svg class="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                        </svg>
-                    </div>
+            <!-- Right side - Language & Currency -->
+            <div class="flex items-center gap-3 lg:gap-4">
+                <div class="flex items-center gap-2">
+                    <span class="text-gray-600">English</span>
+                    <svg class="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </div>
+                <div class="flex items-center gap-2">
+                    <span class="text-gray-600">USD</span>
+                    <svg class="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
-    <!-- Navigation -->
-    <header class="bg-brand-secondary">
-        <div class="mx-auto max-w-7xl w-full px-4 sm:px-6 lg:px-8">
-            <div class="flex h-16 items-center justify-between gap-4">
-                <div class="flex items-center gap-4 flex-1">
-                    <a href="/" class="flex-shrink-0">
-                        <img src="{{ asset('logo.svg') }}" alt="logo" class="h-5" />
-                    </a>
+<!-- Navigation -->
+<header class="bg-brand-secondary">
+    <div class="mx-auto max-w-7xl w-full px-4 sm:px-6 lg:px-8">
+        <div class="flex h-16 items-center justify-between gap-2 sm:gap-4">
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden p-2 text-brand-primary hover:text-tertiary">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
 
-                    <!-- Search Bar -->
-                    <div class="flex-1 ml-5 max-w-2xl">
-                        <form action="{{ route('products.index') }}" method="GET" class="flex">
-                            <div class="relative flex-1">
-                                <select name="category" class="absolute left-0 top-0 h-full px-4 py-2 bg-brand-primary border-r border-gray-300 rounded-l-md text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-brand-primary">
-                                    <option value="">All categories</option>
-                                    <option value="mens">Tactical</option>
-                                    <option value="womans">Kitchen</option>
-                                    <option value="kids">Pocket</option>
-                                    <option value="elect">Hunting</option>
-                                </select>
-                                <input
-                                    type="text"
-                                    name="search"
-                                    placeholder="I'm looking for..."
-                                    class="w-full h-full pl-40 pr-4 py-2 border bg-brand-primary border-brand-primary"
-                                    value="{{ request('search') }}"
-                                />
-                            </div>
-                            <button type="submit" class="px-6 bg-green-500 text-white rounded-r-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <div class="flex items-center gap-2 sm:gap-4 flex-1">
+                <a href="/" class="flex-shrink-0">
+                    <img src="{{ asset('logo.svg') }}" alt="logo" class="h-4 sm:h-5" />
+                </a>
+
+                <!-- Search Bar - Hidden on small mobile, visible on sm+ -->
+                <div class="hidden sm:flex flex-1 ml-2 lg:ml-5 max-w-2xl">
+                    <form action="{{ route('products.index') }}" method="GET" class="flex w-full">
+                        <div class="relative flex-1">
+                            <select name="category" class="absolute left-0 top-0 h-full px-2 lg:px-4 py-2 bg-brand-primary border-r border-gray-300 rounded-l-md text-xs lg:text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-brand-primary">
+                                <option value="">All</option>
+                                <option value="mens">Tactical</option>
+                                <option value="womans">Kitchen</option>
+                                <option value="kids">Pocket</option>
+                                <option value="elect">Hunting</option>
+                            </select>
+                            <input
+                                type="text"
+                                name="search"
+                                placeholder="I'm looking for..."
+                                class="w-full h-full pl-20 lg:pl-40 pr-4 py-2 border bg-brand-primary border-brand-primary text-sm"
+                                value="{{ request('search') }}"
+                            />
+                        </div>
+                        <button type="submit" class="px-4 lg:px-6 bg-green-500 text-white rounded-r-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Desktop Navigation & Cart -->
+            <div class="flex items-center gap-4">
+                <nav aria-label="Global" class="hidden md:block">
+                    <ul class="flex items-center gap-4 lg:gap-6 text-sm">
+                        <li>
+                            <a class="text-brand-primary transition hover:text-tertiary" href="{{ route('home') }}">Home</a>
+                        </li>
+
+                        <li>
+                            <a class="text-brand-primary transition hover:text-tertiary" href="{{ route('products.index') }}">Products</a>
+                        </li>
+
+                        <li>
+                            <a class="text-brand-primary transition hover:text-tertiary flex items-center space-x-1" href="{{ route('cart.index') }}">
                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
                                 </svg>
-                            </button>
-                        </form>
-                    </div>
-                </div>
+                                <span class="hidden lg:inline">Cart</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
 
-                <div class="md:flex md:items-center md:gap-12">
-                    <nav aria-label="Global" class="hidden md:block">
-                        <ul class="flex items-center gap-6 text-sm">
-                            <li>
-                                <a class="text-brand-primary transition hover:text-tertiary" href="{{ route('home') }}"> Home </a>
-                            </li>
-
-                            <li>
-                                <a class="text-brand-primary transition hover:text-tertiary" href="{{ route('products.index') }}"> Products </a>
-                            </li>
-
-                            <li>
-                                <a class="text-brand-primary transition hover:text-tertiary flex items-center space-x-1" href="{{ route('cart.index') }}">
-                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                                    </svg>
-                                    <span>Cart</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
-
-                </div>
+                <!-- Mobile Cart Icon -->
+                <a class="md:hidden text-brand-primary" href="{{ route('cart.index') }}">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                    </svg>
+                </a>
             </div>
         </div>
-    </header>
 
-    <!-- Bottom Bar -->
-    <div class="bg-brand-primary border-gray-200 pt-4">
-        <div class="mx-auto max-w-7xl w-full px-4 sm:px-6 lg:px-8">
-            <div class="flex h-10 items-center justify-between text-md font-semibold">
-                <!-- Left side links -->
-                <nav class="flex items-center gap-6">
-                    <a href="#"
-                       class="inline-flex items-center justify-between rounded-sm border border-green-500 bg-green-500 px-5 py-2 text-sm font-medium text-white hover:bg-transparent hover:text-indigo-600 transition-colors w-48">
-
-                        <!-- Left: Burger Icon -->
-                        <svg class="w-5 h-5 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                  d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
-
-                        <!-- Center: Label -->
-                        <span class="flex-1 text-center">All categories</span>
-
-                        <!-- Right: Dropdown Icon -->
-                        <svg class="w-5 h-5 ml-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                  d="M19 9l-7 7-7-7" />
-                        </svg>
-                    </a>
-                </nav>
-
-                <!-- Right side links -->
-                <nav class="flex items-center gap-6">
-                    <a href="#" class="text-gray-600 hover:text-brand-secondary transition">
-                        Kitchen
-                    </a>
-                    <a href="#" class="text-gray-600 hover:text-brand-secondary transition">
-                        Tactical
-                    </a>
-                    <a href="#" class="text-gray-600 hover:text-brand-secondary transition">
-                        Pocket
-                    </a>
-                    <a href="#" class="text-gray-600 hover:text-brand-secondary transition">
-                        Hunting
-                    </a>
-
-                </nav>
-            </div>
+        <!-- Mobile Search Bar -->
+        <div class="sm:hidden pb-3">
+            <form action="{{ route('products.index') }}" method="GET" class="flex">
+                <div class="relative flex-1">
+                    <select name="category" class="absolute left-0 top-0 h-full px-2 py-2 bg-brand-primary border-r border-gray-300 rounded-l-md text-xs text-gray-700 focus:outline-none focus:ring-2 focus:ring-brand-primary">
+                        <option value="">All</option>
+                        <option value="mens">Tactical</option>
+                        <option value="womans">Kitchen</option>
+                        <option value="kids">Pocket</option>
+                        <option value="elect">Hunting</option>
+                    </select>
+                    <input
+                        type="text"
+                        name="search"
+                        placeholder="Search..."
+                        class="w-full h-full pl-16 pr-4 py-2 border bg-brand-primary border-brand-primary text-sm"
+                        value="{{ request('search') }}"
+                    />
+                </div>
+                <button type="submit" class="px-4 bg-green-500 text-white rounded-r-md hover:bg-green-600">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                    </svg>
+                </button>
+            </form>
         </div>
     </div>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="hidden md:hidden bg-brand-secondary border-t border-gray-200">
+        <nav class="px-4 py-4 space-y-3">
+            <a href="{{ route('home') }}" class="block text-brand-primary hover:text-tertiary transition py-2">Home</a>
+            <a href="{{ route('products.index') }}" class="block text-brand-primary hover:text-tertiary transition py-2">Products</a>
+            <a href="{{ route('cart.index') }}" class="block text-brand-primary hover:text-tertiary transition py-2">Cart</a>
+            <div class="border-t border-gray-200 pt-3 mt-3">
+                <a href="#" class="block text-gray-600 hover:text-brand-secondary transition py-2 text-sm">About Us</a>
+                <a href="#" class="block text-gray-600 hover:text-brand-secondary transition py-2 text-sm">Order Tracking</a>
+                <a href="#" class="block text-gray-600 hover:text-brand-secondary transition py-2 text-sm">Contact Us</a>
+                <a href="#" class="block text-gray-600 hover:text-brand-secondary transition py-2 text-sm">FAQs</a>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<!-- Bottom Bar - Categories -->
+<div class="bg-brand-primary border-gray-200 pt-4">
+    <div class="mx-auto max-w-7xl w-full px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col sm:flex-row h-auto sm:h-10 items-start sm:items-center justify-between gap-3 sm:gap-0 text-sm sm:text-md font-semibold pb-4 sm:pb-0">
+            <!-- All Categories Button -->
+            <nav class="w-full sm:w-auto">
+                <a href="#" class="inline-flex items-center justify-between rounded-sm border border-green-500 bg-green-500 px-3 sm:px-5 py-2 text-sm font-medium text-white hover:bg-transparent hover:text-indigo-600 transition-colors w-full sm:w-48">
+                    <!-- Left: Burger Icon -->
+                    <svg class="w-5 h-5 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+
+                    <!-- Center: Label -->
+                    <span class="flex-1 text-center">All categories</span>
+
+                    <!-- Right: Dropdown Icon -->
+                    <svg class="w-5 h-5 ml-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </a>
+            </nav>
+
+            <!-- Category Links - Hidden on small screens -->
+            <nav class="hidden lg:flex items-center gap-6">
+                <a href="#" class="text-gray-600 hover:text-brand-secondary transition">Kitchen</a>
+                <a href="#" class="text-gray-600 hover:text-brand-secondary transition">Tactical</a>
+                <a href="#" class="text-gray-600 hover:text-brand-secondary transition">Pocket</a>
+                <a href="#" class="text-gray-600 hover:text-brand-secondary transition">Hunting</a>
+            </nav>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+</script>
 
     @if(session('error'))
         <div class="bg-red-500 text-white px-4 py-3 text-center">
